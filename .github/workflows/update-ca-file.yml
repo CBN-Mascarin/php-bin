@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   fetch-ca-file:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - name: Check out repository
       uses: actions/checkout@v4
@@ -45,7 +45,7 @@ jobs:
   release:
     needs: fetch-ca-file
     if: needs.fetch-ca-file.outputs.changed == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Get the latest release
         id: latestrelease
